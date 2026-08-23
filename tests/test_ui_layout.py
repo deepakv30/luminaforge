@@ -20,6 +20,17 @@ def test_should_open_browser_skips_when_no_browser(monkeypatch):
     assert _should_open_browser() is True
 
 
+def test_audio_payload_normalizes_to_path():
+    from ui.studios.voice import _audio_to_path, _safe_profile_name
+
+    assert _audio_to_path(None) is None
+    assert _audio_to_path("") is None
+    assert _audio_to_path("/tmp/ref.wav") == "/tmp/ref.wav"
+    assert _audio_to_path({"path": "/tmp/clip.mp3", "orig_name": "clip.mp3"}) == "/tmp/clip.mp3"
+    assert _safe_profile_name("  My Narrator!  ", None) == "My_Narrator"
+    assert _safe_profile_name("", "/tmp/deep_voice.wav") == "deep_voice"
+
+
 def test_mode_badge_html_includes_xai():
     from ui.layout import mode_badge_html
 

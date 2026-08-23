@@ -33,8 +33,9 @@ soundfile>=0.12
 # Voice support (recommended - works on Python 3.12+)
 # pip install piper-tts
 
-# Optional high-quality zero-shot TTS (may not support Python 3.12+)
-# TTS
+# Zero-shot voice cloning for saved profiles (XTTS). Install with the venv:
+# python -m pip install 'coqui-tts[codec]>=0.27'
+coqui-tts[codec]>=0.27
 
 # Other fallbacks
 # pyttsx3

@@ -80,6 +80,16 @@ def test_get_text_generator_selects_xai():
     assert gen.default_model == "grok-4.6"
 
 
+def test_hybrid_builtin_profile_has_no_reference():
+    from generators.voice import HybridVoiceGenerator
+    from generators.utils import load_config
+
+    gen = HybridVoiceGenerator(load_config())
+    assert gen._reference_wav("builtin_male") is None
+    assert gen._reference_wav("builtin_female") is None
+    assert gen._reference_wav(None) is None
+
+
 def test_prompt_library_exists():
     from generators.utils import load_prompt_library
     lib = load_prompt_library("data/prompt_library.json")
