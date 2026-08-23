@@ -1,0 +1,107 @@
+[
+  {
+    "id": "mkt_01",
+    "category": "Marketing",
+    "title": "Product Launch Hero Shot",
+    "prompt": "Professional product photography of a sleek matte black wireless earbuds case on a reflective dark marble surface, dramatic cinematic lighting with teal and orange accents, shallow depth of field, ultra sharp, luxury aesthetic, commercial photography",
+    "tags": ["product", "hero", "commercial"]
+  },
+  {
+    "id": "mkt_02",
+    "category": "Marketing",
+    "title": "Instagram Carousel - Bold",
+    "prompt": "Bold modern typography on a vibrant gradient background, minimalist design, high contrast, energetic and premium feel, perfect for Instagram carousel slide",
+    "tags": ["social", "carousel", "typography"]
+  },
+  {
+    "id": "vid_01",
+    "category": "Video Scripts",
+    "title": "60s Product Explainer Script",
+    "prompt": "Write a friendly 55-60 second voiceover script for a tech gadget. Start with a hook, explain the problem it solves, show 2-3 benefits, and end with a clear CTA. Keep sentences short and spoken language natural.",
+    "tags": ["script", "explainer", "product"]
+  },
+  {
+    "id": "img_01",
+    "category": "Image Prompts",
+    "title": "Cinematic Portrait",
+    "prompt": "Cinematic portrait of a confident young East Asian woman with short wavy hair, dramatic side lighting, moody teal and amber color grading, shot on 85mm lens, f/1.8, film grain, anamorphic, high fashion editorial",
+    "tags": ["portrait", "cinematic", "fashion"]
+  },
+  {
+    "id": "edu_01",
+    "category": "Education",
+    "title": "Science Concept Visual",
+    "prompt": "Clean educational illustration of photosynthesis in a leaf cross-section, labeled parts, soft pastel colors, vector style mixed with realistic botanical detail, white background, textbook quality",
+    "tags": ["education", "science", "illustration"]
+  },
+  {
+    "id": "edu_02",
+    "category": "Education",
+    "title": "History Timeline Slide",
+    "prompt": "Elegant minimalist timeline infographic showing key events of the Renaissance period, modern sans-serif typography, subtle parchment texture background, professional presentation style",
+    "tags": ["history", "timeline", "infographic"]
+  },
+  {
+    "id": "story_01",
+    "category": "Storytelling",
+    "title": "Fantasy Environment",
+    "prompt": "Mystical ancient forest at twilight, glowing bioluminescent mushrooms, floating particles, giant ancient trees with twisted roots, volumetric god rays, ultra-detailed, fantasy concept art, in the style of Alphonse Mucha and Greg Rutkowski",
+    "tags": ["fantasy", "environment", "concept-art"]
+  },
+  {
+    "id": "story_02",
+    "category": "Storytelling",
+    "title": "Character Concept",
+    "prompt": "Highly detailed character concept of a wise female steampunk inventor in her 40s, leather apron, brass goggles on forehead, holding a complex mechanical device, warm workshop lighting, intricate details, character design sheet style",
+    "tags": ["character", "concept", "steampunk"]
+  },
+  {
+    "id": "soc_01",
+    "category": "Social Media",
+    "title": "Reel Hook Thumbnail",
+    "prompt": "Eye-catching vertical 9:16 thumbnail for a productivity reel, surprised happy person pointing at floating glowing icons, bright energetic background, modern clean aesthetic, bold text space at top",
+    "tags": ["reel", "thumbnail", "vertical"]
+  },
+  {
+    "id": "prod_01",
+    "category": "Product",
+    "title": "Lifestyle Tech",
+    "prompt": "Beautiful flat lay of a premium laptop, wireless headphones, notebook and coffee on a light wooden desk next to a large window with soft natural light, calm productive morning vibe, commercial photography",
+    "tags": ["lifestyle", "tech", "flatlay"]
+  },
+  {
+    "id": "mkt_03",
+    "category": "Marketing",
+    "title": "App Screenshot Background",
+    "prompt": "Abstract soft gradient mesh background in calming blues and purples with subtle geometric shapes, perfect clean canvas for mobile app UI mockups, modern and premium",
+    "tags": ["app", "background", "ui"]
+  },
+  {
+    "id": "vid_02",
+    "category": "Video Scripts",
+    "title": "YouTube Short Script",
+    "prompt": "Write a fast-paced, exciting 28-second YouTube Short script with 3 punchy beats and a strong hook in the first 3 seconds. Topic: quick productivity tip.",
+    "tags": ["shorts", "script", "youtube"]
+  },
+  {
+    "id": "img_02",
+    "category": "Image Prompts",
+    "title": "Architectural Interior",
+    "prompt": "Stunning modern minimalist Japanese-inspired living room interior at golden hour, floor-to-ceiling windows, warm wood, tatami, low furniture, soft natural light, architectural photography, 8k detail",
+    "tags": ["interior", "architecture", "japanese"]
+  },
+  {
+    "id": "edu_03",
+    "category": "Education",
+    "title": "Anatomy Diagram",
+    "prompt": "Clean labeled anatomical diagram of the human heart in anterior view, medical illustration style, precise, educational, high contrast line art with soft color fills, textbook quality",
+    "tags": ["anatomy", "medical", "diagram"]
+  },
+  {
+    "id": "story_03",
+    "category": "Storytelling",
+    "title": "Epic Landscape",
+    "prompt": "Epic wide landscape of snow-capped mountains at sunrise with a lone traveler on a ridge, dramatic clouds, god rays, vast scale, in the style of National Geographic and cinematic concept art",
+    "tags": ["landscape", "epic", "travel"]
+  }
+]

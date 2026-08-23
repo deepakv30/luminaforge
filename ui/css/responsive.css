@@ -1,0 +1,199 @@
+/* Breakpoints: phone <640, tablet 640–1024, laptop 1024–1440, desktop 1440–1920, ultrawide >1920 */
+
+/* ---------- Shared layout helpers (own classes) ---------- */
+
+.studio-shell {
+  align-items: stretch;
+}
+
+.studio-controls,
+.studio-canvas {
+  min-width: min(100%, 320px);
+}
+
+.wrap-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+}
+
+.preset-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  align-items: center;
+}
+
+.preset-btn {
+  font-size: 0.8rem !important;
+  padding: 8px 12px !important;
+  min-height: var(--lf-touch) !important;
+  flex: 0 1 auto;
+}
+
+.send-to-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+}
+
+.send-to-btn {
+  flex: 1 1 140px;
+  min-height: var(--lf-touch) !important;
+  font-size: 0.85rem !important;
+}
+
+.generate-sticky button,
+button.generate-sticky,
+.generate-sticky {
+  min-height: var(--lf-touch) !important;
+  font-weight: 600;
+}
+
+button.primary {
+  background: linear-gradient(90deg, var(--lf-accent), var(--lf-accent-2)) !important;
+}
+
+.card {
+  background: var(--lf-surface);
+  border: 1px solid var(--lf-border);
+  border-radius: var(--lf-radius);
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card {
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+  }
+  .card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card:hover {
+    transition: none;
+    transform: none;
+  }
+}
+
+.metadata-box {
+  font-size: 0.75rem;
+  background: var(--lf-surface-2);
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--lf-border);
+  font-family: ui-monospace, monospace;
+}
+
+/* Fluid galleries: ignore Gradio's fixed --grid-cols */
+.gallery-fluid .grid-container {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--lf-gallery-tile)), 1fr)) !important;
+  grid-template-rows: none !important;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.status-card {
+  background: var(--lf-surface);
+  border: 1px solid var(--lf-border);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+/* Touch-sized controls */
+button,
+.gr-button {
+  min-height: var(--lf-touch);
+}
+
+/* ---------- Phone ---------- */
+@media (max-width: 639px) {
+  .lumina-header {
+    font-size: 1.15rem;
+  }
+
+  .global-search {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .gallery-fluid .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 140px), 1fr)) !important;
+  }
+
+  .generate-sticky {
+    position: sticky;
+    bottom: 0;
+    z-index: var(--lf-z-sticky);
+    background: var(--lf-header-bg);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    margin-left: -4px;
+    margin-right: -4px;
+    padding-top: 8px;
+  }
+
+  .studio-canvas {
+    padding-bottom: calc(var(--lf-touch) + env(safe-area-inset-bottom, 0px));
+  }
+
+  .preset-btn {
+    flex: 1 1 42%;
+  }
+}
+
+/* ---------- Phone landscape / short viewports ---------- */
+@media (max-height: 500px) {
+  .top-bar {
+    position: relative;
+  }
+
+  .gallery-fluid,
+  .studio-canvas video,
+  .studio-canvas audio {
+    max-height: 40dvh;
+  }
+}
+
+/* ---------- Tablet ---------- */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .gallery-fluid .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 160px), 1fr)) !important;
+  }
+
+  .generate-sticky {
+    position: sticky;
+    bottom: 0;
+    z-index: var(--lf-z-sticky);
+    background: var(--lf-header-bg);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
+
+/* ---------- Laptop+ : side-by-side studios, taller canvas ---------- */
+@media (min-width: 1024px) {
+  .studio-canvas .gallery-fluid .grid-wrap,
+  .studio-canvas .grid-wrap {
+    min-height: min(50dvh, 560px);
+  }
+}
+
+/* ---------- Desktop ---------- */
+@media (min-width: 1440px) {
+  .gallery-fluid .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 180px), 1fr)) !important;
+  }
+}
+
+/* ---------- Ultrawide: do not stretch form fields across 2560px ---------- */
+@media (min-width: 1921px) {
+  .studio-controls {
+    max-width: 640px;
+  }
+}

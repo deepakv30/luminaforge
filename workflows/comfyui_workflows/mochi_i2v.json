@@ -1,0 +1,20 @@
+{
+  "_comment": "Mochi / Image-to-Video placeholder workflow. Load a real Mochi I2V workflow in ComfyUI and replace this file.",
+  "last_node_id": 8,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "LoadImage",
+      "pos": [80, 90],
+      "widgets_values": ["reference.png"]
+    },
+    {
+      "id": 2,
+      "type": "MochiImageToVideo",
+      "pos": [400, 120],
+      "widgets_values": ["A smooth camera orbit around the subject, cinematic lighting, subtle motion", 73, 6.5, 42]
+    }
+  ],
+  "links": [],
+  "version": 0.4
+}

@@ -1,0 +1,63 @@
+/* LuminaForge design tokens. Prefer these over Gradio-internal class names. */
+
+:root {
+  --lf-content-max: 1680px;
+  --lf-gallery-tile: 160px;
+  --lf-gallery-max-cols: 4;
+  --lf-bp-phone: 640px;
+  --lf-bp-tablet: 1024px;
+  --lf-bp-laptop: 1440px;
+  --lf-bp-wide: 1920px;
+  --lf-header-bg: #0b1120;
+  --lf-surface: #0f172a;
+  --lf-surface-2: #020617;
+  --lf-border: #334155;
+  --lf-accent: #6366f1;
+  --lf-accent-2: #4f46e5;
+  --lf-text: #e2e8f0;
+  --lf-muted: #94a3b8;
+  --lf-touch: 44px;
+  --lf-radius: 12px;
+  --lf-z-header: 100;
+  --lf-z-sticky: 20;
+  --lf-z-nav: 40;
+  --lf-pad: max(12px, env(safe-area-inset-left, 0px));
+}
+
+html[data-lf-theme="high-contrast"] {
+  --lf-border: #e2e8f0;
+  --lf-text: #f8fafc;
+  --lf-muted: #cbd5e1;
+  --lf-surface: #000000;
+  --lf-surface-2: #000000;
+  --lf-header-bg: #000000;
+  --border-color-primary: #e2e8f0;
+  --body-text-color: #f8fafc;
+  --block-label-text-color: #f1f5f9;
+  --block-title-text-color: #ffffff;
+}
+
+html[data-lf-theme="light"] {
+  --lf-header-bg: #f8fafc;
+  --lf-surface: #ffffff;
+  --lf-surface-2: #f1f5f9;
+  --lf-border: #cbd5e1;
+  --lf-text: #0f172a;
+  --lf-muted: #475569;
+  --background-fill-primary: #f8fafc;
+  --background-fill-secondary: #ffffff;
+  --block-background-fill: #ffffff;
+  --body-text-color: #0f172a;
+  --block-label-text-color: #334155;
+  --block-title-text-color: #0f172a;
+  --border-color-primary: #cbd5e1;
+}
+
+html[data-lf-theme="high-contrast"] .block,
+html[data-lf-theme="high-contrast"] button {
+  border-width: 2px;
+}
+
+html[data-lf-theme="high-contrast"] {
+  font-size: 106%;
+}

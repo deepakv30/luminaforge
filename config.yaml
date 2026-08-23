@@ -1,0 +1,123 @@
+app:
+  name: LuminaForge
+  version: 0.1.0
+  theme: dark
+  output_dir: ./outputs
+  data_dir: ./data
+hardware:
+  preferred_device: auto
+  low_vram_mode: false
+  attention_slicing: true
+  vae_tiling: true
+  max_batch_size: 4
+  threads: 8
+text:
+  provider: xai
+  base_url: http://localhost:11434
+  use_cloud: false
+  cloud_base_url: https://api.ollama.com
+  api_key: ""
+  xai_api_key: ""
+  xai_base_url: https://api.x.ai/v1
+  xai_default_model: grok-4.6
+  xai_models:
+  - grok-4.6
+  - grok-4.5
+  - grok-4
+  - grok-3-mini
+  default_model: grok-4.6
+  enhancer_model: grok-4.6
+  fallback_model: phi3:mini
+  temperature: 0.7
+  top_p: 0.9
+  max_tokens: 1024
+  timeout: 120
+  available_models:
+  - llama3.2:3b
+  - llama3.2:1b
+  - phi3:mini
+  - qwen2.5:7b
+  - gemma2:9b
+  - mistral:7b
+  - llama3.1:8b
+image:
+  provider: diffusers
+  default_model: black-forest-labs/FLUX.1-schnell
+  dtype: bfloat16
+  use_4bit: false
+  use_8bit: false
+  enable_cpu_offload: false
+  presets:
+  - - 1024
+    - 1024
+  - - 768
+    - 1344
+  - - 1344
+    - 768
+  - - 896
+    - 1152
+  - - 1152
+    - 896
+  - - 512
+    - 512
+  default_steps: 4
+  default_guidance: 3.5
+  default_negative_prompt: blurry, low quality, deformed, ugly, watermark, text
+  comfyui:
+    enabled: true
+    base_url: http://localhost:8188
+    timeout: 300
+video:
+  provider: comfyui
+  default_workflow: cogvideox_t2v
+  default_duration: 5
+  default_fps: 16
+  default_resolution:
+  - 832
+  - 480
+  max_duration: 12
+  use_moviepy: true
+  enable_upscale: false
+  comfyui:
+    base_url: http://localhost:8188
+    poll_interval: 1.0
+    max_wait: 600
+  diffusers_fallback_model: THUDM/CogVideoX-2b
+voice:
+  provider: piper
+  default_voice: en_US-lessac-medium
+  coqui:
+    model: tts_models/multilingual/multi-dataset/xtts_v2
+    language: en
+  piper:
+    models_dir: ./data/piper_models
+    default_model: en_US-lessac-medium
+  default_params:
+    speed: 1.0
+    emotion: neutral
+    temperature: 0.75
+prompt_library:
+  file: ./data/prompt_library.json
+  categories:
+  - Marketing
+  - Video Scripts
+  - Image Prompts
+  - Education
+  - Storytelling
+  - Social Media
+  - Product
+  - Creative
+history:
+  db_path: ./data/history.db
+  max_items: 5000
+  auto_save: true
+projects:
+  dir: ./data/projects
+ui:
+  default_tab: Dashboard
+  gallery_columns: 3
+  gallery_min_tile: 160
+  content_max_width: 1680
+  show_advanced_params: true
+  auto_enhance_on_send: false
+  concurrency_limit: 1

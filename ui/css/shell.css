@@ -1,0 +1,126 @@
+/* App shell: container, header, sidebar nav, main tabs.
+   Gradio-internal selectors are isolated here so a Gradio bump is a one-file fix. */
+
+.gradio-container {
+  max-width: min(100%, var(--lf-content-max)) !important;
+  margin: 0 auto;
+  padding-left: max(0.75rem, env(safe-area-inset-left, 0px));
+  padding-right: max(0.75rem, env(safe-area-inset-right, 0px));
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom, 0px));
+}
+
+/* Header */
+.top-bar {
+  position: sticky;
+  top: 0;
+  z-index: var(--lf-z-header);
+  background: var(--lf-header-bg);
+  border-bottom: 1px solid var(--lf-border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+  gap: 8px 12px;
+}
+
+.lumina-header {
+  font-size: clamp(1.15rem, 2.5vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.mode-indicator {
+  flex: 0 0 auto;
+}
+
+.global-search {
+  flex: 1 1 180px;
+  min-width: 140px;
+}
+
+/* Sidebar nav */
+.nav-group-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--lf-muted);
+  margin: 12px 0 4px;
+}
+
+.nav-btn {
+  min-height: var(--lf-touch) !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+
+#lf-sidebar .nav-btn.active,
+.nav-btn.active {
+  outline: 2px solid var(--lf-accent);
+  background: color-mix(in srgb, var(--lf-accent) 18%, transparent) !important;
+}
+
+/* Hide the main tab strip when sidebar nav is present.
+   Nested tabs (Voice Lab) are NOT #lf-main-tabs and stay visible. */
+#lf-main-tabs > .tab-wrapper {
+  display: none !important;
+}
+
+/* Fallback: if JS adds .lf-show-tab-rail, show a touch-scroll strip */
+#lf-main-tabs.lf-show-tab-rail > .tab-wrapper {
+  display: flex !important;
+}
+
+#lf-main-tabs.lf-show-tab-rail .tab-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+#lf-main-tabs,
+#lf-main-tabs > .tabitem {
+  min-height: 0;
+}
+
+/* Nested tab strips (Voice Lab): scroll instead of wrapping into two rows */
+.sub-tabs .tab-wrapper,
+.sub-tabs .tab-container {
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.lf-footer {
+  margin-top: 1rem;
+  color: var(--lf-muted);
+  font-size: 0.85rem;
+}
+
+/* Status badges */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.status-local { background: #166534; color: #86efac; }
+.status-cloud { background: #1e40af; color: #93c5fd; }
+.status-xai { background: #4c1d95; color: #e9d5ff; }
+
+html[data-lf-theme="light"] .status-local { background: #166534; color: #dcfce7; }
+html[data-lf-theme="light"] .status-cloud { background: #1e40af; color: #dbeafe; }
+
+/* Focus — visible for keyboard, not mouse */
+:focus-visible {
+  outline: 2px solid var(--lf-accent) !important;
+  outline-offset: 2px;
+}

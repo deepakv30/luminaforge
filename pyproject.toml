@@ -1,0 +1,33 @@
+[project]
+name = "luminaforge"
+version = "0.1.0"
+description = "Local-first multimodal AI productivity studio (Ollama + Diffusers + ComfyUI + XTTS)"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+  {name = "LuminaForge Contributors"}
+]
+dependencies = [
+  "gradio>=5.0",
+  "pyyaml",
+  "httpx",
+  "torch",
+  "diffusers",
+  "Pillow",
+  "moviepy",
+  "soundfile",
+]
+
+[project.scripts]
+luminaforge = "app:main"
+
+[tool.setuptools.packages.find]
+include = ["generators*", "ui*", "workflows*"]
+
+[tool.setuptools.package-data]
+ui = ["css/*.css"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

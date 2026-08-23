@@ -1,0 +1,43 @@
+{
+  "_comment": "Minimal placeholder CogVideoX Text-to-Video workflow for LuminaForge. Replace with your real exported ComfyUI workflow that uses CogVideoX or similar nodes.",
+  "last_node_id": 12,
+  "last_link_id": 15,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "CogVideoXTextEncode",
+      "pos": [120, 80],
+      "size": {"0": 320, "1": 120},
+      "inputs": [],
+      "outputs": [{"name": "CONDITIONING", "type": "CONDITIONING", "links": [1]}],
+      "properties": {},
+      "widgets_values": ["A beautiful cinematic shot of a person walking through a neon city at night, camera slowly pushing in, high detail, 8k"]
+    },
+    {
+      "id": 2,
+      "type": "EmptyLatentVideo",
+      "pos": [120, 280],
+      "size": {"0": 210, "1": 110},
+      "inputs": [],
+      "outputs": [{"name": "LATENT", "type": "LATENT", "links": [2]}],
+      "properties": {},
+      "widgets_values": [832, 480, 49, 1]
+    },
+    {
+      "id": 3,
+      "type": "CogVideoXSampler",
+      "pos": [480, 140],
+      "size": {"0": 280, "1": 180},
+      "inputs": [
+        {"name": "positive", "type": "CONDITIONING", "link": 1},
+        {"name": "negative", "type": "CONDITIONING", "link": 3},
+        {"name": "latent_image", "type": "LATENT", "link": 2}
+      ],
+      "outputs": [{"name": "LATENT", "type": "LATENT", "links": [4]}],
+      "properties": {},
+      "widgets_values": [25, 6, "fixed", 42, "euler", "simple", 1]
+    }
+  ],
+  "links": [],
+  "version": 0.4
+}

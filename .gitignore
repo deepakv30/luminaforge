@@ -1,0 +1,142 @@
+# =============================================================================
+# LuminaForge .gitignore
+# =============================================================================
+# Keep this repository clean by ignoring generated files, caches, user data,
+# and large model files.
+
+# --- Python ------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+pip-wheel-metadata/
+
+# --- Virtual Environments ----------------------------------------------------
+.venv/
+venv/
+ENV/
+env/
+.virtualenv/
+
+# --- Application Generated Content (never commit user outputs) --------------
+outputs/
+
+# --- Local Data & Databases --------------------------------------------------
+data/history.db
+data/history.db-journal
+data/history.db-wal
+data/history.db-shm
+*.sqlite
+*.sqlite3
+
+# Voice profiles contain user audio — do not commit
+data/voice_profiles/
+# Documentation for voice profiles (safe to commit)
+!data/VOICE_PROFILES_README.txt
+
+# User projects
+data/projects/
+
+# Downloaded voice models (Piper, etc. - auto-fetched at runtime)
+data/piper_models/
+
+# --- IDE & Editor ------------------------------------------------------------
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+*.sublime-*
+
+# --- Operating System --------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# --- Large Model Files -------------------------------------------------------
+# Users download these themselves via Ollama / Hugging Face / ComfyUI
+*.safetensors
+*.bin
+*.ckpt
+*.pt
+*.pth
+*.gguf
+*.ggml
+*.onnx
+
+# Local model caches
+.cache/
+huggingface/
+torch/
+models/
+checkpoints/
+
+# --- Logs & Temporary Files --------------------------------------------------
+*.log
+logs/
+*.tmp
+*.temp
+*.bak
+
+# --- Gradio Specific ---------------------------------------------------------
+.gradio/
+gradio_cached_examples/
+flagged/
+
+# --- Environment & Secrets ---------------------------------------------------
+.env
+.env.local
+.env.*.local
+secrets/
+
+# --- Testing & Dev Tools -----------------------------------------------------
+.coverage
+htmlcov/
+.tox/
+.nox/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+coverage.xml
+
+# --- Misc --------------------------------------------------------------------
+*.zip
+*.tar.gz
+
+# =============================================================================
+# What should be committed
+# =============================================================================
+# - All source code (app.py, generators/, ui/, workflows/, etc.)
+# - config.yaml (with good defaults)
+# - data/prompt_library.json
+# - docs/
+# - scripts/
+# - README.md
+# - requirements.txt / pyproject.toml
+# - Example workflow JSONs
+#
+# After cloning, the project will create needed folders automatically when you
+# run the app or setup script.
