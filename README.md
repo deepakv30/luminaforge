@@ -229,7 +229,7 @@ Contributions extremely welcome.
 
 ## License
 
-MIT License. Build whatever you want.
+MIT License. See [LICENSE](LICENSE).
 
 ---
 
